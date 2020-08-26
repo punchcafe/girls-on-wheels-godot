@@ -1,14 +1,126 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Floor.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Skater.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Rail.tscn" type="PackedScene" id=3]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Floor" parent="." instance=ExtResource( 1 )]
 position = Vector2( 369.843, 281.842 )
 
+[node name="Floor3" parent="." instance=ExtResource( 1 )]
+position = Vector2( -318.494, 281.842 )
+
 [node name="Floor2" parent="." instance=ExtResource( 1 )]
-position = Vector2( 1134.5, 279.464 )
+position = Vector2( 1085.01, 280.878 )
+
+[node name="Floor4" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1644.4, 280.878 )
 
 [node name="Node2D" parent="." instance=ExtResource( 2 )]
+
+[node name="Rail" parent="." instance=ExtResource( 3 )]
+position = Vector2( 175.129, 254.504 )
+
+[node name="Rail2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 230.129, 254.504 )
+
+[node name="Rail3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 285.129, 254.504 )
+
+[node name="Rail4" parent="." instance=ExtResource( 3 )]
+position = Vector2( 341.129, 254.504 )
+
+[node name="Rail5" parent="." instance=ExtResource( 3 )]
+position = Vector2( 389.129, 254.504 )
+
+[node name="Rail6" parent="." instance=ExtResource( 3 )]
+position = Vector2( 437.129, 254.504 )
+
+[node name="Rail7" parent="." instance=ExtResource( 3 )]
+position = Vector2( 483.129, 254.504 )
+
+[node name="Rail8" parent="." instance=ExtResource( 3 )]
+position = Vector2( 525.129, 254.504 )
+
+[node name="Rail12" parent="." instance=ExtResource( 3 )]
+position = Vector2( 579.594, 254.504 )
+
+[node name="Rail13" parent="." instance=ExtResource( 3 )]
+position = Vector2( 634.594, 254.504 )
+
+[node name="Rail14" parent="." instance=ExtResource( 3 )]
+position = Vector2( 689.594, 254.504 )
+
+[node name="Rail15" parent="." instance=ExtResource( 3 )]
+position = Vector2( 745.594, 254.504 )
+
+[node name="Rail16" parent="." instance=ExtResource( 3 )]
+position = Vector2( 793.594, 254.504 )
+
+[node name="Rail17" parent="." instance=ExtResource( 3 )]
+position = Vector2( 841.594, 254.504 )
+
+[node name="Rail18" parent="." instance=ExtResource( 3 )]
+position = Vector2( 887.594, 254.504 )
+
+[node name="Rail19" parent="." instance=ExtResource( 3 )]
+position = Vector2( 929.594, 254.504 )
+
+[node name="Rail20" parent="." instance=ExtResource( 3 )]
+position = Vector2( 695.325, 217.423 )
+
+[node name="Rail21" parent="." instance=ExtResource( 3 )]
+position = Vector2( 750.325, 217.423 )
+
+[node name="Rail22" parent="." instance=ExtResource( 3 )]
+position = Vector2( 805.325, 217.423 )
+
+[node name="Rail23" parent="." instance=ExtResource( 3 )]
+position = Vector2( 861.325, 217.423 )
+
+[node name="Rail24" parent="." instance=ExtResource( 3 )]
+position = Vector2( 909.325, 217.423 )
+
+[node name="Rail25" parent="." instance=ExtResource( 3 )]
+position = Vector2( 957.325, 217.423 )
+
+[node name="Rail26" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1003.33, 217.423 )
+
+[node name="Rail27" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1045.33, 217.423 )
+
+[node name="Rail28" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1099.79, 217.423 )
+
+[node name="Rail29" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1154.79, 217.423 )
+
+[node name="Rail30" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1209.79, 217.423 )
+
+[node name="Rail31" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1265.79, 217.423 )
+
+[node name="Rail32" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1313.79, 217.423 )
+
+[node name="Rail33" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1361.79, 217.423 )
+
+[node name="Rail34" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1407.79, 217.423 )
+
+[node name="Rail35" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1449.79, 217.423 )
+
+[node name="Rail9" parent="." instance=ExtResource( 3 )]
+position = Vector2( 590.129, 215.504 )
+
+[node name="Rail10" parent="." instance=ExtResource( 3 )]
+position = Vector2( 637.129, 215.504 )
+
+[node name="Rail11" parent="." instance=ExtResource( 3 )]
+position = Vector2( 637.129, 215.504 )

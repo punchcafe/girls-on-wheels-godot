@@ -3,7 +3,7 @@ extends KinematicBody2D
 var grindVelocityMagnitude := 0
 var grindingRail = null
 var regularVelocity := Vector2(0,0)
-
+var crouched := false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -11,12 +11,21 @@ func _ready():
 	
 func _physics_process(delta):
 	if(grindingRail):
-		pass
+		grinding_movement(delta)
 	else:
 		regular_movement_strategy(delta)
 
 		
-	
+func grinding_movement(delta):
+	var velocity = grindingRail.railAngle * regularVelocity.length() * (abs(regularVelocity.x)/regularVelocity.x)
+	if !Input.is_action_pressed("ollie_button"):
+		print("released!")
+		print(crouched)
+		grindingRail = null
+		regularVelocity.y -= 1000
+		regularVelocity.x = velocity.x
+		crouched = false
+	move_and_collide(velocity*delta)
 	
 	#velocity = velocity.normalized() * 250
 	
@@ -42,17 +51,23 @@ func apply_gravity():
 	pass
 
 func apply_before_collision_input():
+	var maximum = 450 if crouched else 300
 	if Input.is_action_pressed("ui_right"):
-		regularVelocity = increase_x_by_or_clamp(regularVelocity, 5, 300)
+		regularVelocity = increase_x_by_or_clamp(regularVelocity, 5, maximum)
 	elif Input.is_action_pressed("ui_left"):
-		regularVelocity = decrease_x_by_or_clamp(regularVelocity, 5, -300)
+		regularVelocity = decrease_x_by_or_clamp(regularVelocity, 5, -1*maximum)
 	else:
 		regularVelocity = apply_horizontal_friction(regularVelocity)
 			
 func apply_after_collision_input(initialCollision):
 	if Input.is_action_pressed("ollie_button"):
-		if(initialCollision && initialCollision.normal.x == 0):
-			regularVelocity.y -= abs(regularVelocity.x * 3)
+		crouched = true
+	else:
+		if(crouched):
+			if(initialCollision && initialCollision.normal.x == 0):
+				#jump
+				regularVelocity.y -= abs(regularVelocity.x * 3)
+		crouched = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

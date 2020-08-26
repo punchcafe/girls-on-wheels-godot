@@ -4,15 +4,17 @@
 [ext_resource path="res://RailScript.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 25.9518, 4.57664 )
+extents = Vector2( 27.0031, 2.84275 )
 
-[node name="Rail" type="KinematicBody2D"]
+[node name="Rail" type="Area2D"]
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 26.4285, 3.30356 )
+position = Vector2( 27.4285, 2.30356 )
 shape = SubResource( 1 )
 
 [node name="rail_sprite" type="Sprite" parent="."]
 position = Vector2( 27.7834, 4.91823 )
 texture = ExtResource( 1 )
+[connection signal="body_entered" from="." to="." method="_on_Rail_body_entered"]
+[connection signal="body_shape_exited" from="." to="." method="_on_Rail_body_shape_exited"]
