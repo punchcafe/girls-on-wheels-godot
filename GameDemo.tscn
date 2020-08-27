@@ -124,3 +124,60 @@ position = Vector2( 637.129, 215.504 )
 
 [node name="Rail11" parent="." instance=ExtResource( 3 )]
 position = Vector2( 637.129, 215.504 )
+
+[node name="Rail36" parent="." instance=ExtResource( 3 )]
+position = Vector2( 954.894, 170.807 )
+
+[node name="Rail37" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1009.89, 170.807 )
+
+[node name="Rail38" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1064.89, 170.807 )
+
+[node name="Rail39" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1120.89, 170.807 )
+
+[node name="Rail40" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1168.89, 170.807 )
+
+[node name="Rail41" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1216.89, 170.807 )
+
+[node name="Rail42" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1262.9, 170.807 )
+
+[node name="Rail43" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1304.9, 170.807 )
+
+[node name="Rail44" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1359.36, 170.807 )
+
+[node name="Rail45" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1414.36, 170.807 )
+
+[node name="Rail46" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1469.36, 170.807 )
+
+[node name="Rail47" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1525.36, 170.807 )
+
+[node name="Rail48" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1573.36, 170.807 )
+
+[node name="Rail49" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1621.36, 170.807 )
+
+[node name="Rail50" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1667.36, 170.807 )
+
+[node name="Rail51" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1709.36, 170.807 )
+
+[node name="Rail52" parent="." instance=ExtResource( 3 )]
+position = Vector2( 849.698, 168.888 )
+
+[node name="Rail53" parent="." instance=ExtResource( 3 )]
+position = Vector2( 896.698, 168.888 )
+
+[node name="Rail54" parent="." instance=ExtResource( 3 )]
+position = Vector2( 896.698, 168.888 )
