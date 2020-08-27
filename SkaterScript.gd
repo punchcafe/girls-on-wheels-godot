@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 var grindVelocityMagnitude := 0
+# TODO: make private and make access abstracted
 var grindingRail = null
 var regularVelocity := Vector2(0,0)
 var crouched := false
@@ -32,6 +33,7 @@ func _physics_process(delta):
 	else:
 		regular_movement_strategy(delta)
 
+#### GRINDING MOVEMENT STRATEGY
 		
 func grinding_movement(delta):
 	var velocity = grindingRail.railAngle * regularVelocity.length() * (abs(regularVelocity.x)/regularVelocity.x)
@@ -89,6 +91,8 @@ func apply_after_collision_input(initialCollision):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
+
+# HELPER METHODS
 
 func increase_x_by_or_clamp(vector, increase, limit):
 	if(vector.x >= limit):
