@@ -8,6 +8,7 @@ var strategies_by_status = {}
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	# TODO: make it get applicable statuses to allow multiple animations off the same movement strategy
 	for child in get_children():
 		strategies_by_status[child.get_applicable_status()] = child
 	print(strategies_by_status)

@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 var grindVelocityMagnitude := 0
+var run = false
 # TODO: make private and make access abstracted
 var grindingRail = null
 var regularVelocity := Vector2(0,0)
@@ -14,14 +15,16 @@ func _ready():
 	for child in get_children():
 		if(child is Camera2D):
 			camera = child
-		if(child is Node):
+		if(child.get_name() == "MovementStrategyManager"):
 			movementStrategyManager = child
 	pass # Replace with function body.
 
 func _process(delta):
+	_mvp_animation_calculator()
+	print(get_status())
 	var lower_lim = 0.6
 	var upper_lim = 1.0
-	var ratio = abs(regularVelocity.x/350)
+	var ratio = abs(regularVelocity.x/350)-0.1
 	var x_zoom : float
 	if(ratio < lower_lim):
 		x_zoom = lower_lim
@@ -34,8 +37,37 @@ func _process(delta):
 func _physics_process(delta):
 	movementStrategyManager.get_strategy_for_status(get_status()).move(self, delta)
 	
+func _mvp_animation_calculator():
+	if(get_status() == "SKATING"):
+		if(crouched):
+			if(regularVelocity.x > 0):
+				$AnimationPlayer.play("SKATE_CROUCHING_RIGHT")
+			else:
+				$AnimationPlayer.play("SKATE_CROUCHING_LEFT")
+		else:
+			if(regularVelocity.x > 0):
+				$AnimationPlayer.play("SKATE_STANDING_RIGHT")
+			else:
+				$AnimationPlayer.play("SKATE_STANDING_LEFT")
+	elif(get_status() == "GRINDING"):
+		if(regularVelocity.x > 0):
+			$AnimationPlayer.play("GRINDING_RIGHT")
+		else:
+			$AnimationPlayer.play("GRINDING_LEFT")
+	elif(get_status() == "RUN"):
+		if(regularVelocity.x < 1 && regularVelocity.x > -1):
+			$AnimationPlayer.play("STANDING")
+		elif(regularVelocity.x > 0):
+			$AnimationPlayer.play("RUNNING_RIGHT")
+		else:
+			$AnimationPlayer.play("RUNNING_LEFT")
+
+	
+	
 
 func get_status():
+	if(run):
+		return "RUN"
 	if(grindingRail):
 		return "GRINDING"
 	else:

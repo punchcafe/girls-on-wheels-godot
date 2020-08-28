@@ -10,7 +10,16 @@
 position = Vector2( 369.843, 281.842 )
 
 [node name="Floor3" parent="." instance=ExtResource( 1 )]
-position = Vector2( -318.494, 281.842 )
+position = Vector2( -317.435, 281.842 )
+rotation = -6.28319
+
+[node name="Floor5" parent="." instance=ExtResource( 1 )]
+position = Vector2( -685.068, -74.1377 )
+rotation = 1.5708
+
+[node name="Floor6" parent="." instance=ExtResource( 1 )]
+position = Vector2( 2000.67, -92.1485 )
+rotation = 1.5708
 
 [node name="Floor2" parent="." instance=ExtResource( 1 )]
 position = Vector2( 1085.01, 280.878 )

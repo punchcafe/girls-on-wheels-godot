@@ -40,6 +40,12 @@ func apply_before_collision_input(skater):
 		skater.regularVelocity = apply_horizontal_friction(skater.regularVelocity)
 			
 func apply_after_collision_input(initialCollision, skater):
+	if(skater.regularVelocity.x < 0.1 && skater.regularVelocity.x > -0.1):
+		print("setting it")
+		print(skater.regularVelocity)
+		skater.crouched = false
+		skater.run = true
+		pass
 	if Input.is_action_pressed("ollie_button"):
 		skater.crouched = true
 	else:

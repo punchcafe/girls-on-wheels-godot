@@ -1,14 +1,167 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=18 format=2]
 
-[ext_resource path="res://final-kodama-for-godot.png" type="Texture" id=1]
+[ext_resource path="res://skater_sprite_sheet.png" type="Texture" id=1]
 [ext_resource path="res://SkaterScript.gd" type="Script" id=2]
 [ext_resource path="res://Camera2D.gd" type="Script" id=3]
 [ext_resource path="res://MovementStrategyManager.gd" type="Script" id=4]
 [ext_resource path="res://skate_movement_strategy.gd" type="Script" id=5]
 [ext_resource path="res://grind_movement_strategy.gd" type="Script" id=6]
+[ext_resource path="res://run_movement_strategy.gd" type="Script" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 16.9423, 4.21696 )
+extents = Vector2( 16.9423, 1.29246 )
+
+[sub_resource type="Animation" id=8]
+resource_name = "GRINDING_LEFT"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("skater-sprite-sheet:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 32, 33, 34, 35 ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "STANDING"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("skater-sprite-sheet:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 28, 29, 30, 31 ]
+}
+
+[sub_resource type="Animation" id=10]
+resource_name = "RUNNING_LEFT"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("skater-sprite-sheet:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 8, 9, 10, 11 ]
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "RUNNING_RIGHT"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("skater-sprite-sheet:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 4, 5, 6, 7 ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "SKATE_CROUCHING_LEFT"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("skater-sprite-sheet:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 24, 25, 26, 27 ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "SKATE_CROUCHING_RIGHT"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("skater-sprite-sheet:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 20, 21, 22, 23 ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "SKATE_STANDING_LEFT"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("skater-sprite-sheet:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 16, 17, 18, 19 ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "SKATE_STANDING_RIGHT"
+length = 0.4
+loop = true
+step = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("skater-sprite-sheet:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.00490049, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 12, 13, 14, 15 ]
+}
+
+[sub_resource type="Animation" id=11]
+resource_name = "STANDING"
+tracks/0/type = "value"
+tracks/0/path = NodePath("skater-sprite-sheet:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
 
 [node name="Node2D" type="Node2D"]
 position = Vector2( 20.2272, -43.4509 )
@@ -17,12 +170,14 @@ position = Vector2( 20.2272, -43.4509 )
 position = Vector2( 15.3576, 64.0526 )
 script = ExtResource( 2 )
 
-[node name="final-kodama-for-godot" type="Sprite" parent="KinematicBody2D"]
+[node name="skater-sprite-sheet" type="Sprite" parent="KinematicBody2D"]
 position = Vector2( 0.642365, -30.0526 )
 texture = ExtResource( 1 )
+vframes = 10
+hframes = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
-position = Vector2( -0.374603, 0.374588 )
+position = Vector2( -0.374603, -4.62541 )
 shape = SubResource( 1 )
 
 [node name="Camera2D" type="Camera2D" parent="KinematicBody2D"]
@@ -45,3 +200,17 @@ script = ExtResource( 5 )
 
 [node name="GrindMovementStrategy" type="Node" parent="KinematicBody2D/MovementStrategyManager"]
 script = ExtResource( 6 )
+
+[node name="RunMovementStrategy" type="Node" parent="KinematicBody2D/MovementStrategyManager"]
+script = ExtResource( 7 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="KinematicBody2D"]
+anims/GRINDING_LEFT = SubResource( 8 )
+anims/GRINDING_RIGHT = SubResource( 7 )
+anims/RUNNING_LEFT = SubResource( 10 )
+anims/RUNNING_RIGHT = SubResource( 9 )
+anims/SKATE_CROUCHING_LEFT = SubResource( 6 )
+anims/SKATE_CROUCHING_RIGHT = SubResource( 4 )
+anims/SKATE_STANDING_LEFT = SubResource( 3 )
+anims/SKATE_STANDING_RIGHT = SubResource( 2 )
+anims/STANDING = SubResource( 11 )
