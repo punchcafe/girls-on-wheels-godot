@@ -15,19 +15,10 @@ func _ready():
 
 
 func _on_Rail_body_entered(body):
-	if(body.grindingRail != null && body.grindingRail != self):
-		# Skater has come from other rail
-		body.grindingRail = self
-	elif Input.is_action_pressed("ollie_button"):
-		print ("you're going to grind!")
-		body.grindingRail = self
-		
-	pass # Replace with function body.
+	if Input.is_action_pressed("ollie_button"):
+		body._state_manager.grind_on_rail(self)
 
 
 func _on_Rail_body_shape_exited(body_id, body, body_shape, area_shape):
-	if(body.grindingRail == self):
-		print("bye felicia!")
-		# Avoid doubling
-		body.grindingRail = null
-	pass # Replace with function body.
+	print("bye!")
+	body._state_manager.release_grind_on_rail(self)

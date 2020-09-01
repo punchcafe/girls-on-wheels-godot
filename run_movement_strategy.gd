@@ -1,5 +1,6 @@
 extends "res://movement_strategy.gd"
 
+const SkaterStates = preload("res://SkaterStates.gd")
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -20,9 +21,9 @@ func move(skater, delta):
 		skater.regularVelocity = Vector2(0,0)
 		return
 	if Input.is_action_pressed("ollie_button"):
-		skater.run = false
 		skater.crouched = false
+		skater._state_manager.mount()
 	skater.move_and_collide(skater.regularVelocity*delta)
 
 func get_applicable_status():
-	return "RUN"
+	return SkaterStates.RUNNING

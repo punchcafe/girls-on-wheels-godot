@@ -1,14 +1,13 @@
 extends "res://movement_strategy.gd"
 
+const SkaterStates = preload("res://SkaterStates.gd")
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+var _crouched
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	_crouched = false
 
 func move(skater, delta):
 	apply_gravity(skater)
@@ -31,7 +30,7 @@ func apply_gravity(skater):
 	pass
 
 func apply_before_collision_input(skater):
-	var maximum = 450 if skater.crouched else 300
+	var maximum = 450 if _crouched else 300
 	if Input.is_action_pressed("ui_right"):
 		skater.regularVelocity = increase_x_by_or_clamp(skater.regularVelocity, 5, maximum)
 	elif Input.is_action_pressed("ui_left"):
@@ -41,19 +40,17 @@ func apply_before_collision_input(skater):
 			
 func apply_after_collision_input(initialCollision, skater):
 	if(skater.regularVelocity.x < 0.1 && skater.regularVelocity.x > -0.1):
-		print("setting it")
-		print(skater.regularVelocity)
-		skater.crouched = false
-		skater.run = true
+		_crouched = false
+		skater._state_manager.dismount()
 		pass
 	if Input.is_action_pressed("ollie_button"):
-		skater.crouched = true
+		_crouched = true
 	else:
-		if(skater.crouched):
+		if(_crouched):
 			if(initialCollision && initialCollision.normal.x == 0):
 				#jump
 				skater.regularVelocity.y -= abs(skater.regularVelocity.x * 3)
-		skater.crouched = false
+		_crouched = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
@@ -83,4 +80,4 @@ func apply_horizontal_friction(regularVelocity):
 
 
 func get_applicable_status():
-	return "SKATING"
+	return SkaterStates.SKATING

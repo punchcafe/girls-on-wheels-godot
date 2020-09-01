@@ -1,9 +1,14 @@
 extends Node
 
+const SkaterStates = preload("res://SkaterStates.gd")
+
 var strategies_by_status = {}
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
+
+func is_crouched() -> bool:
+	return strategies_by_status[SkaterStates.SKATING]._crouched
 
 
 # Called when the node enters the scene tree for the first time.
