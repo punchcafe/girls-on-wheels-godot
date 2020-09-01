@@ -21,7 +21,6 @@ func move(skater, delta):
 		skater.regularVelocity = Vector2(0,0)
 		return
 	if Input.is_action_pressed("ollie_button"):
-		skater.crouched = false
 		skater._state_manager.mount()
 	skater.move_and_collide(skater.regularVelocity*delta)
 

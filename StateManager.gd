@@ -10,14 +10,14 @@ var _permitted_state_transitions = {
 }
 
 var _grinding_rail
-var _hanging_wall
+var _hanging_wall_collision
 
 var _current_state
 
 func _ready():
 	self._current_state = SkaterStates.SKATING
 	self._grinding_rail = null
-	self._hanging_wall = null
+	self._hanging_wall_collision = null
 
 func _transition_state_to(state) -> bool:
 	if(self._permitted_state_transitions[self._current_state].has(state)):
@@ -50,6 +50,21 @@ func mount() -> bool:
 	
 func dismount() -> bool:
 	return _transition_state_to(SkaterStates.RUNNING)
-	
+
+func grab_wall(collision) -> bool:
+	if(_transition_state_to(SkaterStates.WALL_HANGING)):
+		self._hanging_wall_collision = collision
+		return true
+	else:
+		return false
+
+func release_wall() -> bool:
+	if(_transition_state_to(SkaterStates.SKATING)):
+		self._hanging_wall_collision = null
+		print("released!")
+		return true
+	else:
+		return false
+
 func get_grinding_rail():
 	return _grinding_rail

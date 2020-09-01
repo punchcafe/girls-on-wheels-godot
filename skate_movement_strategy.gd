@@ -39,11 +39,14 @@ func apply_before_collision_input(skater):
 		skater.regularVelocity = apply_horizontal_friction(skater.regularVelocity)
 			
 func apply_after_collision_input(initialCollision, skater):
-	if(skater.regularVelocity.x < 0.1 && skater.regularVelocity.x > -0.1):
+	if(initialCollision && initialCollision.normal.y == 0):
+		# Collision with a wall
+		skater._state_manager.grab_wall(initialCollision)
+	elif(skater.regularVelocity.x < 0.1 && skater.regularVelocity.x > -0.1):
 		_crouched = false
 		skater._state_manager.dismount()
 		pass
-	if Input.is_action_pressed("ollie_button"):
+	elif Input.is_action_pressed("ollie_button"):
 		_crouched = true
 	else:
 		if(_crouched):
