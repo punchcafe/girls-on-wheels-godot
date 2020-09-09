@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Floor.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Skater.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Rail.tscn" type="PackedScene" id=3]
+[ext_resource path="res://RailFourtyFive.tscn" type="PackedScene" id=4]
 
 [node name="Node2D" type="Node2D"]
 
@@ -125,6 +126,18 @@ position = Vector2( 714.901, 45.7897 )
 [node name="Rail70" parent="." instance=ExtResource( 3 )]
 position = Vector2( 756.901, 45.7897 )
 
+[node name="Rail104" parent="." instance=ExtResource( 3 )]
+position = Vector2( 862.755, 5.69766 )
+
+[node name="Rail105" parent="." instance=ExtResource( 3 )]
+position = Vector2( 915.766, 5.69766 )
+
+[node name="Rail106" parent="." instance=ExtResource( 3 )]
+position = Vector2( 968.983, 5.69766 )
+
+[node name="Rail107" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1022.2, 5.69766 )
+
 [node name="Rail71" parent="." instance=ExtResource( 3 )]
 position = Vector2( -426.646, 96.6439 )
 
@@ -174,7 +187,7 @@ position = Vector2( 285.819, 96.6439 )
 position = Vector2( 327.819, 96.6439 )
 
 [node name="Rail87" parent="." instance=ExtResource( 3 )]
-position = Vector2( 453.013, -114.261 )
+position = Vector2( 451.954, -114.261 )
 
 [node name="Rail88" parent="." instance=ExtResource( 3 )]
 position = Vector2( 508.013, -114.261 )
@@ -334,3 +347,6 @@ position = Vector2( 896.698, 168.888 )
 
 [node name="Rail54" parent="." instance=ExtResource( 3 )]
 position = Vector2( 896.698, 168.888 )
+
+[node name="Rail103" parent="." instance=ExtResource( 4 )]
+position = Vector2( 810.014, 6.73273 )

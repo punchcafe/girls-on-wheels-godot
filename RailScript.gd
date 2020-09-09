@@ -1,8 +1,10 @@
 extends Area2D
 
 
-var railAngle = Vector2(2, 0)
+var _rail_angle = Vector2(2, 0)
 
+func get_rail_angle():
+	return self._rail_angle
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
