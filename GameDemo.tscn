@@ -219,21 +219,6 @@ position = Vector2( 912.478, -114.261 )
 [node name="Rail97" parent="." instance=ExtResource( 3 )]
 position = Vector2( 967.478, -114.261 )
 
-[node name="Rail98" parent="." instance=ExtResource( 3 )]
-position = Vector2( 1023.48, -114.261 )
-
-[node name="Rail99" parent="." instance=ExtResource( 3 )]
-position = Vector2( 1071.48, -114.261 )
-
-[node name="Rail100" parent="." instance=ExtResource( 3 )]
-position = Vector2( 1119.48, -114.261 )
-
-[node name="Rail101" parent="." instance=ExtResource( 3 )]
-position = Vector2( 1165.48, -114.261 )
-
-[node name="Rail102" parent="." instance=ExtResource( 3 )]
-position = Vector2( 1207.48, -114.261 )
-
 [node name="Rail20" parent="." instance=ExtResource( 3 )]
 position = Vector2( 695.325, 217.423 )
 
@@ -350,3 +335,15 @@ position = Vector2( 896.698, 168.888 )
 
 [node name="Rail103" parent="." instance=ExtResource( 4 )]
 position = Vector2( 810.014, 6.73273 )
+
+[node name="Rail108" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1076.64, -32.3945 )
+
+[node name="Rail109" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1130.7, -71.925 )
+
+[node name="Rail110" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1183.54, -110.245 )
+
+[node name="Rail111" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1236.78, -148.969 )
