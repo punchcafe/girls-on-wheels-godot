@@ -17,7 +17,7 @@ _global_script_class_icons={
 
 config/name="Girls-on-wheels"
 run/main_scene="res://GameDemo.tscn"
-config/icon="res://icon.png"
+config/icon="res://sprites/icon.png"
 
 [input]
 

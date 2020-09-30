@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://sprites/floor.png" type="Texture" id=1]
+
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 370.794, 12.5317 )
+
+[node name="Floor" type="KinematicBody2D"]
+
+[node name="floor" type="Sprite" parent="."]
+position = Vector2( -0.164032, 2.45139 )
+scale = Vector2( 13.6662, 1 )
+texture = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0.247498, 1.99658 )
+shape = SubResource( 1 )
