@@ -32,6 +32,7 @@ func move(skater, delta):
 	var velocity = skater._state_manager.get_grinding_rail().get_rail_angle() * skater.regularVelocity.length() * (abs(skater.regularVelocity.x)/skater.regularVelocity.x)
 	if !Input.is_action_pressed("ollie_button"):
 		skater._state_manager.jump_off_rail()
+		# TODO: make this velocity increase part of the state manager?
 		skater.regularVelocity.y -= 1000
 		skater.regularVelocity.x = velocity.x
 	skater.move_and_collide(velocity*delta)

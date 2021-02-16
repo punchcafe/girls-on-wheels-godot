@@ -1,11 +1,10 @@
 extends Area2D
 
-signal lol
 
-var _rail_angle = Vector2(2, 0)
+# Declare member variables here. Examples:
+# var a = 2
+# var b = "text"
 
-func get_rail_angle():
-	return self._rail_angle
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -17,12 +16,4 @@ func _ready():
 #	pass
 
 func get_type(): 
-	return "Rail"
-	
-func get_left_rail_end():
-	# TODO
-	pass
-
-func get_right_rail_end():
-	# TODO	
-	pass
+	return "ZONE"

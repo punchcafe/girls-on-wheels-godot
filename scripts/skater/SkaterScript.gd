@@ -1,4 +1,4 @@
-extends KinematicBody2D
+extends Node2D
 
 const SkaterStates = preload("res://scripts/skater/SkaterStates.gd")
 
@@ -8,6 +8,8 @@ var run = false
 var grindingRail = null
 var regularVelocity := Vector2(0,0)
 var camera : Camera2D
+
+var _board_area_2d
 
 # Manager instances
 
@@ -69,3 +71,19 @@ func _mvp_animation_calculator():
 
 func get_status():
 	return _state_manager.get_current_state()
+	
+func get_current_rail():
+	return grindingRail
+
+func get_board_area_2d():
+	return _board_area_2d
+
+
+
+func _on_skater_entered_rail(rail):
+	if Input.is_action_pressed("ollie_button"):
+		self._state_manager.grind_on_rail(rail)
+
+
+func _on_skater_exited_rail(rail):
+	self._state_manager.release_grind_on_rail(rail)

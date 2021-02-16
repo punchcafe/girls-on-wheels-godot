@@ -1,13 +1,15 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://sprites/rail_sprite.png" type="Texture" id=1]
 [ext_resource path="res://scripts/rail/rail_script.gd" type="Script" id=2]
-
-
-
+[ext_resource path="res://scenes/left_rail_end.gd" type="Script" id=3]
+[ext_resource path="res://scenes/right_rail_end.gd" type="Script" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 27.0031, 2.84275 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 2.88, 5.69127 )
 
 [node name="Rail" type="Area2D"]
 script = ExtResource( 2 )
@@ -19,5 +21,19 @@ shape = SubResource( 1 )
 [node name="rail_sprite" type="Sprite" parent="."]
 position = Vector2( 27.7834, 4.91823 )
 texture = ExtResource( 1 )
-[connection signal="body_entered" from="." to="." method="_on_Rail_body_entered"]
-[connection signal="body_shape_exited" from="." to="." method="_on_Rail_body_shape_exited"]
+
+[node name="left_rail_end" type="Area2D" parent="."]
+script = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="left_rail_end"]
+visible = false
+position = Vector2( 0.396851, 1.98425 )
+shape = SubResource( 2 )
+
+[node name="right_rail_end" type="Area2D" parent="."]
+position = Vector2( 54.5669, 1.38898 )
+script = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="right_rail_end"]
+position = Vector2( 1.52588e-05, 0.396851 )
+shape = SubResource( 2 )
